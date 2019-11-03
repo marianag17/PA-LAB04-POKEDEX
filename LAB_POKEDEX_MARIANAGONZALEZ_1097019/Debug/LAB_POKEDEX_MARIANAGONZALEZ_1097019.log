@@ -1,7 +1,4 @@
 ﻿  MyForm.cpp
-c:\users\luis\desktop\segundo ciclo 2019\pa\lab_pokedex_marianagonzalez_1097019\lab_pokedex_marianagonzalez_1097019\myform.h(306): warning C4101: 'nombre': unreferenced local variable
-  Pokemon.cpp
-  metodosdeordenamiento.cpp
-  Generating Code...
+c:\users\luis\desktop\segundo ciclo 2019\pa\lab_pokedex_marianagonzalez_1097019\lab_pokedex_marianagonzalez_1097019\myform.h(308): warning C4101: 'nombre': unreferenced local variable
   metodosdeordenamiento.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
   LAB_POKEDEX_MARIANAGONZALEZ_1097019.vcxproj -> C:\Users\luis\Desktop\SEGUNDO CICLO 2019\PA\LAB_POKEDEX_MARIANAGONZALEZ_1097019\Debug\LAB_POKEDEX_MARIANAGONZALEZ_1097019.exe

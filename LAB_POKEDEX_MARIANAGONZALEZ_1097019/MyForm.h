@@ -67,13 +67,15 @@ namespace LABPOKEDEXMARIANAGONZALEZ1097019 {
 	private: System::Windows::Forms::Button^  btnbubblegen;
 	private: System::Windows::Forms::Button^  btnquickgen;
 	private: System::Windows::Forms::Button^  btnstupidgen;
+	private: System::Windows::Forms::Timer^  timer1;
+	private: System::ComponentModel::IContainer^  components;
 	protected:
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -82,6 +84,7 @@ namespace LABPOKEDEXMARIANAGONZALEZ1097019 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			this->btnabrir = (gcnew System::Windows::Forms::Button());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
@@ -100,6 +103,7 @@ namespace LABPOKEDEXMARIANAGONZALEZ1097019 {
 			this->btnbubblegen = (gcnew System::Windows::Forms::Button());
 			this->btnquickgen = (gcnew System::Windows::Forms::Button());
 			this->btnstupidgen = (gcnew System::Windows::Forms::Button());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->SuspendLayout();
 			// 
 			// btnabrir
@@ -243,6 +247,7 @@ namespace LABPOKEDEXMARIANAGONZALEZ1097019 {
 			this->btnbubblegen->TabIndex = 17;
 			this->btnbubblegen->Text = L"BUBBLE SORT";
 			this->btnbubblegen->UseVisualStyleBackColor = true;
+			this->btnbubblegen->Click += gcnew System::EventHandler(this, &MyForm::btnbubblegen_Click);
 			// 
 			// btnquickgen
 			// 
@@ -252,6 +257,7 @@ namespace LABPOKEDEXMARIANAGONZALEZ1097019 {
 			this->btnquickgen->TabIndex = 18;
 			this->btnquickgen->Text = L"QUICK SORT";
 			this->btnquickgen->UseVisualStyleBackColor = true;
+			this->btnquickgen->Click += gcnew System::EventHandler(this, &MyForm::btnquickgen_Click);
 			// 
 			// btnstupidgen
 			// 
@@ -364,6 +370,10 @@ namespace LABPOKEDEXMARIANAGONZALEZ1097019 {
 			String^ elnombre = gcnew String(arrayPokemon.nombree.c_str());
 			listBox2->Items->Add(elnombre + "," + arrayPokemon.nnacional + "," + arrayPokemon.gen);
 		}
+		timer1->Interval = 1000;
+		timer1->Start();
+
+		
 	}
 private: System::Void btnquicknn_Click(System::Object^  sender, System::EventArgs^  e) {
 	metodosdeordenamiento metodoss;
@@ -375,11 +385,45 @@ private: System::Void btnquicknn_Click(System::Object^  sender, System::EventArg
 	}
 	for (int i = 0; i < 70; i++)
 	{
-		newArrPok[i] = metodoss.quickSort(arrayQSort, 0, 9)[i];
+		newArrPok[i] = metodoss.quickSort(arrayQSort, 0, 69)[i];
 	}
 	for each(Pokemon arrayPokemon in newArrPok) {
 		String^ elnombre = gcnew String(arrayPokemon.nombree.c_str());
 		listBox3->Items->Add(elnombre + "," + arrayPokemon.nnacional + "," + arrayPokemon.gen);
+	}
+}
+private: System::Void btnbubblegen_Click(System::Object^  sender, System::EventArgs^  e) {
+	metodosdeordenamiento metodoss;
+	Pokemon arrayBBSort[70];
+	Pokemon newArrPok[70];
+	for (int i = 0; i < 70; i++)
+	{
+		arrayBBSort[i] = arrayPok[i];
+	}
+	for (int i = 0; i < 70; i++)
+	{
+		newArrPok[i] = metodoss.bubbleSortGen(arrayBBSort, 70)[i];
+	}
+	for each(Pokemon arrayPokemon in newArrPok) {
+		String^ elnombre = gcnew String(arrayPokemon.nombree.c_str());
+		listBox7->Items->Add(elnombre + "," + arrayPokemon.nnacional + "," + arrayPokemon.gen);
+	}
+}
+private: System::Void btnquickgen_Click(System::Object^  sender, System::EventArgs^  e) {
+	metodosdeordenamiento metodoss;
+	Pokemon arrayQSort[70];
+	Pokemon newArrPok[70];
+	for (int i = 0; i < 70; i++)
+	{
+		arrayQSort[i] = arrayPok[i];
+	}
+	for (int i = 0; i < 70; i++)
+	{
+		newArrPok[i] = metodoss.quickSortGen(arrayQSort, 0,69)[i];
+	}
+	for each(Pokemon arrayPokemon in newArrPok) {
+		String^ elnombre = gcnew String(arrayPokemon.nombree.c_str());
+		listBox6->Items->Add(elnombre + "," + arrayPokemon.nnacional + "," + arrayPokemon.gen);
 	}
 }
 };

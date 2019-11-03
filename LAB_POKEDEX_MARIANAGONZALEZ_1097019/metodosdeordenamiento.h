@@ -11,5 +11,8 @@ public:
 	Pokemon* bubbleSort(Pokemon arr[], int num);
 	Pokemon* quickSort(Pokemon arr[], int inicio, int fin);
 	int Separar(Pokemon arr[], int inicio, int fin);
+	Pokemon* bubbleSortGen(Pokemon arr[], int num);
+	Pokemon* quickSortGen(Pokemon arr[], int inicio, int fin);
+	int SepararGen(Pokemon arr[], int inicio, int fin);
 };
 
